@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <title>Sentiment/Emotion Analysis</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
+    <!-- insertion templates -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">        
+  	<link rel="stylesheet" href="{% static 'insertion/css/tooplate-style.css' %}">
+  	<link rel="stylesheet" href="{% static 'insertion/css/fontawesome-all.min.css' %}"> 
+
+
+
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" data-aos="fade-down" data-aos-delay="500">
+      <div class="container">
+        <a class="navbar-brand" href="/">Home</a>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+        	<ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="/sentiment" class="nav-link">Sentiment Analysis</a></li>
+            <li class="nav-item"><a href="/emotion" class="nav-link">Emotion Analysis</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="ftco-cover"  id="section-home" style="background-image: url({% static 'home/images/twitter_back.jpg' %});"  data-aos="fade"  data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center ftco-vh-100">
+          <div class="col-md-7">
+            <h1 class="ftco-heading mb-3" data-aos="fade-up" data-aos-delay="500">Welcome To The World Of Tweets</h1>
+            <h2 class="h5 ftco-subheading mb-5" data-aos="fade-up"  data-aos-delay="600">Tweet Sentiment/Emotion Analysis</h2>
+              <div class="row">
+              <div class="box counter-left md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                  <h1 class="counter" style="color: #6cbb23">350632</h1>
+                  <p>Tweets sent per minute</p>
+                     </div>
+                  <div class="box counter-left md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+              <h1 class="counter" style="color: #6cbb23">321056231</h1>
+              <p>Total Number of monthly active users on Twitter</p>
+                  </div>
+                  <div class="box counter-left md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+              <h1 class="counter" style="color:#6cbb23">7447680</h1>
+              <p>Minutes Since First Tweet Ever</p>
+                  </div>
+              </div>
+            {% if user.is_authenticated == False %}
+              <div>
+                <br>
+                <br>
+                <br>
+              <h3 style="color:White" data-aos="fade-up" data-aos-delay="500">Perform <a href="/sentiment" style="color:#D7C004">Sentiment</a> And <a style="color:#D7C004" href="/emotion">Emotion</a> Analysis on Tweets</h3>
+          </div>
+          {% endif %}
+          </div>
+          </div>
+          </div>
+    </section>
+    <!-- END section -->
+    
+    <section class="ftco-cover" id="section-about">
+      <div class="container mx-auto" data-aos="fade-up">
+        <!-- <div class="row"> -->
+          <!-- <div class="col-12  mb-5" data-aos="fade-up"> -->
+            <h1>"Twitter is a great place to tell the world what you're thinking before you've had a chance to think about it." - Chris Pirillo</h1>
+          <!-- </div> -->
+        <!-- </div> -->
+        
+      </div>
+    </section>
+    <!-- END section -->
+  
+
+    <section class="ftco-section tm-bg-pink-light">
+      <div class="row container grid mx-auto" data-aos="fade-up">
+        <div class="col-6 tm-album-col">
+        	<a href="/sentiment">
+          <figure class="effect-sadie">
+            <img src="{% static 'insertion/img/insertion-260x390-01.jpg' %}" alt="Image" class="img-fluid">
+            <figcaption>
+              <h2 style="color:white"><b>Sentiment Analysis</b></h2>
+              <p>Categorises tweet under Positive, Neutral or Negative</p>
+            </figcaption>
+          </figure>
+      </a>
+        </div>
+        <div class="col-6 tm-album-col mx-auto">
+        	<a href="/emotion">
+          <figure class="effect-sadie">
+            <img src="{% static 'insertion/img/insertion-260x390-02.jpg' %}" alt="Image" class="img-fluid">
+            <figcaption>
+              <h2 style="color:white"><b>Emotion Analysis</b></h2>
+              <p>Categorises tweet under Love, Happiness, Worry, Sadness or Hate</p>
+            </figcaption>
+          </figure>
+      </a>
+        </div>
+      </div>
+    </section>
+  <div class="ftco-section row justify-content-center text-center" data-aos="fade-up">
+          <h2>Developer</h2>
+  </div>
+      <section class="ftco-section tm-bg-pink-light">
+        <div class="col-3 mx-auto"  data-aos="fade-up">
+          
+          <div class="flip-container">
+            <div class="flipper">
+              <div class="front" style="background-image: url({% static 'home/images/puneet.jpg' %});">
+                <div class="box">
+                  <h2>Puneet Chhabra</h2>
+                  <p>SDE - 1</p>
+                </div>
+              </div>
+              <div class="back">
+                <!-- back content -->
+                <blockquote>
+                  <p>Computer Science Student(IIT Patna), 1601CS34</p>
+                </blockquote>
+                <div class="author d-flex">
+                  <div class="image mr-3 align-self-center">
+                    <img src="{% static 'home/images/puneet_thumbail.jpg' %}" alt="">
+                  </div>
+                  <div class="name align-self-center">Puneet Chhabra<span class="position">SDE - 1</span></div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- .flip-container -->
+        </div>
+    </section>
+      </div>
+
+
+
+  
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'register/js/jquery.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'register/js/popper.min.js' %}"></script>
+  <script src="{% static 'register/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'register/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'register/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'register/js/aos.js' %}"></script>
+  <script src="{% static 'register/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'register/js/google-map.js' %}"></script>
+  <script src="{% static 'register/js/main.js' %}"></script>
+    <script src="{% static 'register/othertemplate/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'register/othertemplate/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'register/othertemplate/js/main.js' %}"></script>
+
+    <!-- insertion static -->
+
+    <!-- <script src="{% static 'insertion/js/jquery-3.2.1.slim.min.js' %}"></script> -->
+    
+  </body>
+</html>

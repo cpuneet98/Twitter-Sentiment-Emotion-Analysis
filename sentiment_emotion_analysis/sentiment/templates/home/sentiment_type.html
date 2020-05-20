@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <title>Sentiment Analysis of Entered Tweet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+
+    <!-- searchbox css -->
+    <link rel="stylesheet" href="{% static 'type/css/searchbox.css' %}">
+
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- insertion templates -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">        
+  	<link rel="stylesheet" href="{% static 'insertion/css/tooplate-style.css' %}">
+  	<link rel="stylesheet" href="{% static 'insertion/css/fontawesome-all.min.css' %}"> 
+
+<!-- lapsus static -->
+    <link href="{% static 'lapsus/css/font-awesome.min.css' %}" rel="stylesheet">   
+    <!-- Custom CSS -->
+    <link href="{% static 'lapsus/css/style.css' %}" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" data-aos="fade-down" data-aos-delay="500">
+      <div class="container">
+        <a class="navbar-brand" href="/">Home</a>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="/sentiment" class="nav-link">Sentiment Analysis</a></li>
+            <li class="nav-item"><a href="/emotion" class="nav-link">Emotion Analysis</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+
+    <section class="ftco-cover"  id="section-home" style="background-image: url({% static 'home/images/twitter_back.jpg' %});"  data-aos="fade"  data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center ftco-vh-100">
+          <div class="col-md-7">
+            <h1 class="ftco-heading mb-3" data-aos="fade-up" data-aos-delay="500">Sentiment Analysis</h1>
+            <h2 class="h5 ftco-subheading mb-5" data-aos="fade-up"  data-aos-delay="600">Categorises tweet under Positive, Neutral or Negative</h2>
+              <div class="row">
+                  <div class="box counter-left md-5 col-2" data-aos="fade-up" data-aos-delay="700">
+                  <img src="{% static 'icons/positive.png' %}">
+                  </div>
+                  <div class="box counter-left md-5 col-2" data-aos="fade-up" data-aos-delay="700">
+                  <img src="{% static 'icons/neutral.png' %}">
+                  </div>
+                  <div class="box counter-left md-5 col-2" data-aos="fade-up" data-aos-delay="700">
+                  <img src="{% static 'icons/negative.png' %}">
+                  </div>
+              </div>
+<br>
+<br>
+
+
+
+<div class="page" data-aos="fade-up" data-aos-delay="800">
+  <div class="page__demo">
+    <form class="search" method="post">
+      {% csrf_token %}
+      <div class="a-field search__field">
+        <input type="text" id="sentiment_typed_tweet" name="sentiment_typed_tweet" class="r-text-field a-field__input search__input" placeholder=" " required>
+        <button class="r-button search__button search__clear" type="reset">
+          <span class="search__clear-label">Clear the search form</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" class="search__icon search__icon-clear">
+            <path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z"/>
+          </svg>          
+        </button>
+        <label class="a-field__label-wrap search__hint" for="query">
+          <span class="a-field__label">Enter the Tweet to be analysed</span>
+        </label>        
+      </div>
+      <button class="r-button search__button search__submit" type="submit">
+        <span class="search__submit-label">Search</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.966 56.966" class="search__icon search__icon-search">
+          <path d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+          </div>
+        
+
+
+
+
+  </div>
+          </div>
+    </section>
+    <!-- END section -->
+    
+    <!-- END section -->
+
+
+
+
+
+  
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'register/js/jquery.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'register/js/popper.min.js' %}"></script>
+  <script src="{% static 'register/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'register/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'register/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'register/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'register/js/aos.js' %}"></script>
+  <script src="{% static 'register/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'register/js/google-map.js' %}"></script>
+  <script src="{% static 'register/js/main.js' %}"></script>
+    <script src="{% static 'register/othertemplate/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'register/othertemplate/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'register/othertemplate/js/main.js' %}"></script>
+
+    <!-- insertion static -->
+
+    <!-- <script src="{% static 'insertion/js/jquery-3.2.1.slim.min.js' %}"></script> -->
+
+    <!-- lapsus static -->
+    
+    <script src="{% static 'lapsus/js/jquery.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'lapsus/js/bootstrap.min.js' %}"></script>
+    <!-- Respond JS for IE8 -->
+    <script src="{% static 'lapsus/js/respond.min.js' %}"></script>
+    <!-- HTML5 Support for IE -->
+    <script src="{% static 'lapsus/js/html5shiv.js' %}"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'lapsus/js/custom.js' %}"></script>
+
+    <!-- searchbox type js -->
+    <script src="{% static 'type/js/search_box.js' %}"></script>
+
+  </body>
+</html>

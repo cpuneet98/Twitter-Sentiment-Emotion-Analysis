@@ -1,0 +1,247 @@
+/*
+ * Author 	: HIMANSHU GUPTA 
+ * Email 		: himanshucse2012@gmail.com
+ * Website	:	http://www.indioweb.in/portfolio
+ */
+ 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+
+/*
+ * Basic CSS starts 
+ */
+
+body{
+	font-family: 'Open Sans', Sans Sarif;
+	color: #787878;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Open Sans', Sans Sarif;
+	font-weight: 600;
+}
+
+p{
+	margin:0;
+	padding:0;
+	line-height: 24px;
+	font-size: 14px;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:hover,a:active,a:focus {
+	outline: 0 !important;
+}
+
+hr{
+
+}
+
+:focus {
+	outline:none;
+}
+
+::-moz-focus-inner {
+	border:0;
+}
+
+.color{
+	background: #32c8de;
+}
+.color-hover{
+	background: #2bbdd2;
+}
+
+/* 
+ * Basic CSS ends 
+ */
+
+.banner {
+	border-top: 8px solid #32c8de;
+	background: #fff url('../img/banner.jpg') repeat-x center center;
+}
+
+.banner .container {
+	max-width: 800px;
+}
+
+.banner .banner-content {
+	padding: 150px 0; 
+}
+
+.banner .banner-content p {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	font-size: 20px;
+	text-transform: capitalize;
+	letter-spacing: 0.1em;
+	color: #fff;
+}
+
+.banner .banner-content .btn {
+	border-radius: 3px;
+}
+
+.feature {
+	padding-top: 60px;
+	padding-bottom: 100px;
+}
+
+.feature .feature-item {
+	max-width: 360px;
+	margin: 0 auto;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.feature .feature-item i {
+	display: block;
+	width: 90px;
+	height: 90px;
+	line-height: 89px;
+	margin: 0 auto;
+	font-size: 40px;
+	color: #32c8de;
+	margin-bottom: 30px;
+	border: 1px solid #2bbdd2;
+	border-radius: 50%;
+	-webkit-transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
+	-ms-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+.feature .feature-item:hover i {
+	background: #32c8de;
+	color: #fff;
+}
+
+.feature .feature-item h4 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 22px;
+}
+
+.feature .feature-item p {
+	line-height: 25px;
+	letter-spacing: 0.035em;
+}
+
+.subscribe {
+	padding: 100px 0;
+	background: #eee;
+}
+
+.subscribe .sub-message h3 {
+	margin-top: 0;
+	font-size: 25px;
+}
+
+.subscribe .sub-message p {
+	line-height: 25px;
+	letter-spacing: 0.025em;
+}
+
+.subscribe .sub-message form {margin-top: 20px;}
+.subscribe .sub-message form .form-control {
+	box-shadow: none;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+} 
+.subscribe .sub-message form .btn {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+} 
+.subscribe .embed-responsive {
+	background: #fff;
+ }
+ 
+.footer-above {
+	padding: 100px 0;
+	text-align: center;
+}
+
+.footer-above .post {
+	max-width: 750px;
+	margin: 0 auto;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.footer-above h4 {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-size: 25px;
+}
+
+.footer-above .social a {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	margin: 3px 1px;
+	font-size: 14px;
+	background: #d5d5d5;
+	color: #fff;
+	border-radius: 50%;
+	-webkit-transition: background 1s linear;
+	-moz-transition: background 1s linear;
+	-ms-transition: background 1s linear;
+	-o-transition: background 1s linear;
+	transition: background 1s linear;
+}
+.footer-above .social a:hover {background: #32c8de;}
+
+footer {
+	padding: 50px 0;
+	background: #eee;
+	text-align: center;
+}
+
+footer .nav-link {
+	margin-bottom: 10px;
+	color: #999;
+}
+ 
+/*
+ * Responsive CSS 
+ */
+
+/*
+ * Mobile phones 
+ */
+@media (max-width: 480px){
+
+}
+
+/*
+ * Tablets 
+ */
+@media (max-width: 767px){
+	.banner .banner-content { text-align: center;}
+	.banner .banner-content img {
+		max-width: 180px;
+		margin: 0 auto;
+	}
+	
+	.subscribe .sub-content {
+		max-width: 360px;
+		margin: 0 auto;
+	}
+	.subscribe .sub-message form {margin-bottom: 25px;}
+}	
+
+/*
+ * Desktop 
+ */
+@media (max-width: 991px){
+
+}
